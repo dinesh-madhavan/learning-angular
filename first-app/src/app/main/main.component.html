@@ -1,2 +1,10 @@
 <first-app-header></first-app-header>
-<p>Main Component</p>
+<img [src]="image" [width]="w" [height]="h">
+<p>
+    My name is {{name}}. I am {{age}} years old.
+     
+</p>
+<button (click)="changeImage()">Change Image</button>
+<button (click)="plus()">+</button>
+<button (click)="minus()">-</button>
+<app-footer></app-footer>
