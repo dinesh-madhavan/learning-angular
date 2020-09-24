@@ -14,30 +14,21 @@ export class MainComponent{
     image:string;
     w:number;
     h:number;
-    count:number;
+    toggle:boolean;
 
     constructor(){
         this.name="Dinesh";
         this.age=22;
-        this.image="../../assets/heart.png";
+        this.image="../../assets/pokeball.png";
         this.w=150;
         this.h=150;
-        this.count=0;
+        this.toggle=false;
     
         }
 
     changeImage(){
-        if(this.count==0)
-    {
-        this.count=1;
-        this.image="../../assets/pikachu.webp";
-    }
-        else
-        {
-          this.image="../../assets/heart.png";
-          this.count=0;
-        }
-               
+                 this.image=!this.toggle?"../../assets/pikachu.webp":"../../assets/pokeball.png";
+            this.toggle=!this.toggle;  
 }
  plus()
  {
