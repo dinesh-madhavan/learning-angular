@@ -7,7 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalcComponent implements OnInit {
 
-   constructor() { }
+  a:number;
+  b:number;
+  sum:number;
+  sub:number;
+  mul:number;
+  
+  displayaddResult(result:number) {
+    this.sum=result;
+}
+
+  displaysubResult(result:number)
+  {
+    this.sub=result;
+  }
+
+  displaymulResult(result:number)
+  {
+    this.mul=result;
+  }
+   constructor() {
+     
+    }
 
   ngOnInit(): void {
   }

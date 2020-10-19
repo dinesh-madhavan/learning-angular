@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add',
@@ -7,16 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  a:number;
-  b:number;
+  @Input("number1") num1:number;
+  @Input() num2:number;
   sum:number;
+  @Output() addResult=new EventEmitter<number>();
 
   constructor() {
 
    }
 
    add(){
-     this.sum=this.a+this.b;
+     this.sum=this.num1+this.num2;
+     this.addResult.emit(this.sum);
    }
 
   ngOnInit(): void {

@@ -1,4 +1,17 @@
 <p>calculator</p>
-<app-add></app-add>
-<app-sub></app-sub>
-<app-mul></app-mul>
+
+<input type="number" [(ngModel)]="a">
+<input type="number" [(ngModel)]="b">
+<br><br>
+<p>{{a}} + {{b}} = {{sum}} </p>
+<br>
+<app-add [number1]="a" [num2]="b" (addResult)="displayaddResult($event)"></app-add>
+<br>
+<p>{{a}} - {{b}} = {{sub}} </p>
+<app-sub [number1]="a" [num2]="b" (subResult)="displaysubResult($event)"></app-sub>
+
+<br>
+<p>{{a}} *  {{b}} = {{mul}} </p>
+<app-mul [number1]="a" [num2]="b" (mulResult)="displaymulResult($event)"></app-mul>
+<br>
+

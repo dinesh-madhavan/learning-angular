@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-mul',
@@ -6,14 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mul.component.css']
 })
 export class MulComponent implements OnInit {
-a:number;
-b:number;
+@Input("number1") num1:number;
+@Input() num2:number;
 c:number;
-
+@Output() mulResult=new EventEmitter<number>();
   constructor() { }
   
 mul(){
-  this.c=this.a*this.b;
+  this.c=this.num1*this.num2;
+  this.mulResult.emit(this.c);
 }
   ngOnInit(): void {
   }

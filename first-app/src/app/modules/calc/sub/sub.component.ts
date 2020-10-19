@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sub',
@@ -6,13 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sub.component.css']
 })
 export class SubComponent implements OnInit {
-  a:number;
-  b:number;
+  @Input("number1") num1:number;
+  @Input() num2:number;
   c:number;
-  constructor() { }
+  @Output() subResult=new EventEmitter<number>();
+ 
+  constructor() { 
+
+  }
 
   sub(){
-    this.c=this.a-this.b;
+    this.c=this.num1-this.num2;
+    this.subResult.emit(this.c);
   }
   ngOnInit(): void {
   }
